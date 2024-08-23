@@ -1,10 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg height="40px" width="40px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 320.069 320.069" xml:space="preserve">
-<g>
-	<path style="fill:#010002;" d="M177.935,142.137V0h-35.801v142.137H0.003v35.801h142.131v142.131h35.801V177.938h142.131v-35.801
-		C320.066,142.137,177.935,142.137,177.935,142.137z M308.132,166.004H166.001v142.131h-11.934V166.004H11.937v-11.934h142.131
-		V11.934h11.934v142.137h142.131V166.004z"/>
-</g>
+<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 12H20M12 4V20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

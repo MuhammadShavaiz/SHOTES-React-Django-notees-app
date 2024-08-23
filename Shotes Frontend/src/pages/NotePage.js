@@ -5,7 +5,7 @@ import { ReactComponent as ArrowLeft } from '../assets/left-arrow-svgrepo-com.sv
 const NotePage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const [note, setNote] = useState();
+    const [note, setNote] = useState({ body: '' });
 
     useEffect(() => {
         const getNote = async () => {
@@ -17,6 +17,15 @@ const NotePage = () => {
         getNote();
     }, [id]);
 
+    const createNote = async () => {
+      await fetch(`/api/notes/create/`, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(note),
+      });
+};
     const updateNote = async () => {
             await fetch(`/api/notes/${id}/update/`, {
                 method: 'PUT',
@@ -36,14 +45,17 @@ const NotePage = () => {
       navigate('/');
     };
 
-    const submitUpdate = () => {
-      if(id !== 'new' && !note.body){
-        deleteNote()
-      } else if (id !== 'new'){
-        updateNote()
+    const submitUpdate = async () => {
+      if (id !== 'new' && !note.body) {
+          await deleteNote();
+      } else if (id !== 'new') {
+          await updateNote();
+      } else if (id === 'new' && note.body) {
+          await createNote();
       }
-            navigate('/')
-    }
+      navigate('/');
+  };
+  
 
     return (
         <div className='note'>
@@ -54,7 +66,7 @@ const NotePage = () => {
                 {id !== 'new' ? (
                   <button onClick={deleteNote}>Delete</button>
                 ):(
-                  <button>Done</button>
+                  <button onClick={submitUpdate}>Done</button>
                 )}
                 
             </div>

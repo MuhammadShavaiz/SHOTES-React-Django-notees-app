@@ -171,14 +171,14 @@ a {
 }
 
 .floating-button {
-  font-size: 48px;
+  font-size: 38px;
   position: absolute;
   bottom: 24px;
   right: 16px;
   background: var(--color-main);
   border: none;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
