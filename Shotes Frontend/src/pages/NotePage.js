@@ -5,10 +5,11 @@ import { ReactComponent as ArrowLeft } from '../assets/left-arrow-svgrepo-com.sv
 const NotePage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const [note, setNote] = useState(null);
+    const [note, setNote] = useState();
 
     useEffect(() => {
         const getNote = async () => {
+            if (id === 'new') return
             const response = await fetch(`/api/notes/${id}`);
             const data = await response.json();
             setNote(data);
@@ -36,12 +37,13 @@ const NotePage = () => {
     };
 
     const submitUpdate = () => {
-        if (note) {
-            updateNote().then(() => {
-                navigate('/');
-            });
-        }
-    };
+      if(id !== 'new' && !note.body){
+        deleteNote()
+      } else if (id !== 'new'){
+        updateNote()
+      }
+            navigate('/')
+    }
 
     return (
         <div className='note'>
@@ -49,7 +51,12 @@ const NotePage = () => {
                 <h3>
                     <ArrowLeft onClick={submitUpdate} />
                 </h3>
-                <button onClick={deleteNote}>Delete</button>
+                {id !== 'new' ? (
+                  <button onClick={deleteNote}>Delete</button>
+                ):(
+                  <button>Done</button>
+                )}
+                
             </div>
             <textarea
                 onChange={(e) => setNote({ ...note, body: e.target.value })}
