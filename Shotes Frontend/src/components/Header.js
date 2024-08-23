@@ -1,5 +1,6 @@
 import React from 'react'
-import {ReactComponent as ThemeIcon} from '../assets/idea-svgrepo-com.svg'
+import {ReactComponent as SunIcon} from '../assets/sun.svg'
+import {ReactComponent as MoonIcon} from '../assets/moon.svg'
 
 const Header = ({theme,setTheme}) => {
   const toggleTheme = () => {
@@ -8,7 +9,9 @@ const Header = ({theme,setTheme}) => {
   return (
     <div className='app-header'>
       <h1>Note List</h1>
-      <ThemeIcon onClick={toggleTheme} style={{width:"30px",height:'30px'}}/>
+      <button style={{ width: '30px', height: '30px'}} onClick={toggleTheme}>
+        {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+      </button>
     </div>
   )
 }
