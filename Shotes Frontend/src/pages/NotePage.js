@@ -25,6 +25,15 @@ const NotePage = () => {
                 body: JSON.stringify(note),
             });
     };
+    const deleteNote = async() =>{
+      fetch(`/api/notes/${id}/delete/`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+      });
+      navigate('/');
+    };
 
     const submitUpdate = () => {
         if (note) {
@@ -40,6 +49,7 @@ const NotePage = () => {
                 <h3>
                     <ArrowLeft onClick={submitUpdate} />
                 </h3>
+                <button onClick={deleteNote}>Delete</button>
             </div>
             <textarea
                 onChange={(e) => setNote({ ...note, body: e.target.value })}
