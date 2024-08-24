@@ -1,7 +1,7 @@
 import Header from './components/Header';
 import './App.css';
 import NoteListPage from './pages/NoteListPage';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import NotePage from './pages/NotePage';
 import { useState} from 'react';
 
