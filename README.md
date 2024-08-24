@@ -9,6 +9,10 @@ This is a simple Notes App that allows users to:
 - **Automatic Saving:** Notes are automatically saved to ensure no data is lost.
 - **Dark/Light Mode:** Switch between light and dark themes using a toggle button.
 
+
+![App Screenshot](https://github.com/MuhammadShavaiz/Shotes-React-Django-notes-app/blob/main/Shotes%20App/screenshot_notes.jpg)
+
+
 ## Setup
 
 ### Backend (Django)
